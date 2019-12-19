@@ -8,18 +8,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+      with:
+        fetch-depth: 1
+    - name: Set up Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: Install Poetry
+      uses: dschep/install-poetry-action@v1.2
+
+    - name: Cache Poetry virtualenv
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: ~/.virtualenvs
+        key: poetry-${{ hashFiles('**/poetry.lock') }}
+        restore-keys: |
+          poetry-${{ hashFiles('**/poetry.lock') }}
+
+    - name: Set Poetry config
+      run: |
+        poetry config settings.virtualenvs.in-project false
+        poetry config settings.virtualenvs.path ~/.virtualenvs
+
+    - name: Install Dependencies
+      run: poetry install
+      if: steps.cache.outputs.cache-hit != 'true'
+
     - name: Keep requirements.txt updated 
-      uses: abatilo/actions-poetry@v1.1.0
-      with:
-        python_version: 3.8.0
-        poetry_version: 1.0.0
-        args: export -f requirements.txt > requirements.txt
+      run: poetry export -f requirements.txt > requirements.txt
+
     - name: Keep requirements-dev.txt updated 
-      uses: abatilo/actions-poetry@v1.1.0
-      with:
-        python_version: 3.8.0
-        poetry_version: 1.0.0
-        args: export --dev -f requirements.txt > requirements-dev.txt
+      run: poetry export --dev -f requirements.txt > requirements-dev.txt
+
     - name: Commit to repository
       env:
         GITHUB_TOKEN: ${{ secrets.github_token }}
