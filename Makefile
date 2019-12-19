@@ -29,6 +29,8 @@ deploy:
 delete:
 	$(CHALICE) delete
 
+test:
+	$(RUN) pytest
 
 
-.PHONY: default requirements security snyk snyk-dev local
+.PHONY: default requirements security snyk snyk-dev local deploy delete test
