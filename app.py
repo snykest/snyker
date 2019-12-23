@@ -1,15 +1,26 @@
-from chalice import Chalice
+"""
+Example Chalice application exploring integrating variour tooling
+"""
+# pylint: disable=W0613,C0103
+from typing import Any, Dict
+
+from aws_lambda_context import LambdaContext
+from chalice import Chalice  # type: ignore
+
+from chalicelib import RESPONSE
 
 app = Chalice(app_name="snyker")
 
 
 @app.route("/")
-def index():
-    return {"hello": "world"}
+def index() -> Dict[str, str]:
+    """Automatically creates an API Gateway"""
+    return RESPONSE
 
 
 @app.lambda_function()
-def function(event, context):
+def function(event: Any, context: LambdaContext) -> Dict[str, str]:
+    """Raw lambda function"""
     return {"hello": "function"}
 
 
