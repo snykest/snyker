@@ -8,6 +8,7 @@ from aws_lambda_context import LambdaContext
 from chalice import Chalice  # type: ignore
 
 from chalicelib import RESPONSE
+from chalicelib.config import conf
 
 app = Chalice(app_name="snyker")
 
@@ -15,7 +16,8 @@ app = Chalice(app_name="snyker")
 @app.route("/")
 def index() -> Dict[str, str]:
     """Automatically creates an API Gateway"""
-    return RESPONSE
+    return {"hello": conf["VALUE"]}
+    #return RESPONSE
 
 
 @app.lambda_function()

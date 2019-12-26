@@ -7,10 +7,10 @@ default: requirements security
 requirements: requirements.txt requirements-dev.txt
 
 requirements.txt: poetry.lock
-	poetry export -f requirements.txt > requirements.txt
+	poetry export --without-hashes -f requirements.txt > requirements.txt
 
 requirements-dev.txt: poetry.lock
-	poetry export --dev -f requirements.txt > requirements-dev.txt
+	poetry export --dev --without-hashes -f requirements.txt > requirements-dev.txt
 
 security: snyk snyk-dev
 
