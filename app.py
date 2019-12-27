@@ -2,6 +2,7 @@
 Example Chalice application exploring integrating variour tooling
 """
 # pylint: disable=W0613,C0103
+# Disable non-UPPER CASE variables and unused arguments
 from typing import Any, Dict
 
 from aws_lambda_context import LambdaContext
