@@ -10,15 +10,15 @@ from chalice import Chalice  # type: ignore
 from chalicelib.config import ParameterStoreConfig
 from chalicelib.logging import configure_logging
 
-app = Chalice(app_name="snyker", debug=True)
-configure_logging(app.log)
-
+app = Chalice(app_name="snyker", debug=False)
+configure_logging(app)
 config = ParameterStoreConfig("snyker")
 
 
 @app.route("/")
 def index() -> Dict[str, str]:
     """Automatically creates an API Gateway"""
+    app.log.info("This is an info statement")
     app.log.debug("This is a debug statement")
     return {"hello": config["VALUE"]}
 

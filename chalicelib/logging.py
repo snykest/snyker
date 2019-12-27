@@ -1,15 +1,18 @@
 """
-Helpers for logging
+Helpers for setting up sensible logging
 """
 
 import logging
+import logging.config
+from typing import Any, Dict
 
 import structlog  # type: ignore
+from chalice import Chalice  # type: ignore
 
 
-def configure_logging(logger, debug: bool = False) -> None:
+def configure_logging(app: Chalice):
     """
-    Configure structured logging for the specified logger
+    Configure structured logging for a Chalice application
     """
     shared_processors = [
         structlog.stdlib.add_log_level,
@@ -18,22 +21,31 @@ def configure_logging(logger, debug: bool = False) -> None:
         structlog.processors.TimeStamper(fmt="iso"),
         structlog.processors.format_exc_info,
     ]
-    structlog.configure(
-        processors=shared_processors
-        + [structlog.stdlib.ProcessorFormatter.wrap_for_formatter],
-        context_class=structlog.threadlocal.wrap_dict(dict),
-        logger_factory=structlog.stdlib.LoggerFactory(),
-        wrapper_class=structlog.stdlib.BoundLogger,
-    )
 
-    renderer = structlog.processors.JSONRenderer(sort_keys=True)
+    level = lambda x: "DEBUG" if x.debug else "INFO"
 
-    formatter = structlog.stdlib.ProcessorFormatter(
-        processor=renderer, foreign_pre_chain=shared_processors
-    )
-    handler = logging.StreamHandler()
-    handler.setFormatter(formatter)
-    logger.handlers = []
-    logger.addHandler(handler)
-    if debug:
-        logger.setLevel(logging.DEBUG)
+    config: Dict[str, Any] = {
+        "version": 1,
+        "disable_existing_loggers": True,
+        "formatters": {
+            "plain": {
+                "()": structlog.stdlib.ProcessorFormatter,
+                "processor": structlog.processors.JSONRenderer(sort_keys=True),
+                "foreign_pre_chain": shared_processors,
+            }
+        },
+        "handlers": {
+            "default": {"class": "logging.StreamHandler", "formatter": "plain"}
+        },
+        "loggers": {
+            "": {"handlers": ["default"], "level": level(app), "propagate": False}
+        },
+    }
+
+    config["loggers"][app.app_name] = {
+        "handlers": ["default"],
+        "level": level(app),
+        "propagate": False,
+    }
+
+    logging.config.dictConfig(config)
