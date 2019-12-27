@@ -1,7 +1,6 @@
 """
 Helpers for configuration management with AWS Systems Manager Parameter store
 """
-
 import boto3  # type: ignore
 from botocore.exceptions import ClientError  # type: ignore
 
