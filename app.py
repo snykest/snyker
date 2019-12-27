@@ -7,17 +7,20 @@ from typing import Any, Dict
 from aws_lambda_context import LambdaContext
 from chalice import Chalice  # type: ignore
 
-from chalicelib import RESPONSE
-from chalicelib.config import conf
+from chalicelib.config import ParameterStoreConfig
+from chalicelib.logging import configure_logging
 
-app = Chalice(app_name="snyker")
+app = Chalice(app_name="snyker", debug=True)
+configure_logging(app.log)
+
+config = ParameterStoreConfig("snyker")
 
 
 @app.route("/")
 def index() -> Dict[str, str]:
     """Automatically creates an API Gateway"""
-    return {"hello": conf["VALUE"]}
-    #return RESPONSE
+    app.log.debug("This is a debug statement")
+    return {"hello": config["VALUE"]}
 
 
 @app.lambda_function()

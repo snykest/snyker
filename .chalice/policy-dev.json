@@ -8,6 +8,15 @@
                 "ssm:GetParameter"
             ],
             "Resource": "arn:aws:ssm:*:*:parameter/snyker/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "logs:CreateLogGroup"
+            ],
+            "Resource": "*"
         }
     ]
 }
