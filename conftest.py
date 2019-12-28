@@ -2,9 +2,6 @@
 Configuration for pytest fixtures
 """
 
-# pylint: disable=C0415
-# Allow inports outside toplevel to ensure mocked AWS environment vars are used
-
 import boto3  # type: ignore
 import pytest  # type: ignore
 from chalice import Chalice  # type: ignore
@@ -14,7 +11,7 @@ from moto import mock_ssm  # type: ignore
 @pytest.fixture
 def app() -> Chalice:
     """Return the application for testing"""
-    from app import app as chalice_app
+    from app import app as chalice_app  # pylint: disable=import-outside-toplevel
 
     return chalice_app
 

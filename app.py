@@ -1,8 +1,9 @@
 """
 Example Chalice application exploring integrating variour tooling
 """
-# pylint: disable=W0613,C0103
-# Disable non-UPPER CASE variables and unused arguments
+
+# pylint: disable=unused-argument
+
 from typing import Any, Dict
 
 from aws_lambda_context import LambdaContext
@@ -11,9 +12,9 @@ from chalice import Chalice  # type: ignore
 from chalicelib.config import ParameterStoreConfig
 from chalicelib.logging import configure_logging
 
-app = Chalice(app_name="snyker", debug=False)
+app = Chalice(app_name="snyker", debug=False)  # pylint: disable=invalid-name
 configure_logging(app)
-config = ParameterStoreConfig("snyker")
+config = ParameterStoreConfig("snyker")  # pylint: disable=invalid-name
 
 
 @app.route("/")
