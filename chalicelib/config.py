@@ -42,3 +42,6 @@ class ParameterStoreConfig(dict):
 
     def __delitem__(self, name: str):
         raise NotImplementedError()  # pragma: no cover
+
+    def __repr__(self):
+        return f"ParameterStore({self.prefix})"

@@ -24,3 +24,6 @@ class TestConfig:
 
     def test_contains_not_string(self, config) -> None:
         assert not {} in config
+
+    def test_repr(self, config):
+        assert repr(config) == "ParameterStore(snyker)"
