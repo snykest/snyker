@@ -20,7 +20,10 @@ class ParameterStoreConfig(dict):
     def get(self, key):
         name = f"/{self.prefix}/{key}"
         response = self.client.get_parameters(Names=[name], WithDecryption=True)
-        return response["Parameters"][0]["Value"]
+        try:
+            return response["Parameters"][0]["Value"]
+        except IndexError:
+            raise KeyError
 
     def __contains__(self, name: object) -> bool:
         if not isinstance(name, str):
@@ -35,7 +38,7 @@ class ParameterStoreConfig(dict):
         return self.get(name)
 
     def __setitem__(self, key: str, value: str):
-        raise NotImplementedError()
+        raise NotImplementedError()  # pragma: no cover
 
     def __delitem__(self, name: str):
-        raise NotImplementedError()
+        raise NotImplementedError()  # pragma: no cover
