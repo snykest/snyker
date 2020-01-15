@@ -4,7 +4,7 @@ A Lambda application used for demonstration purposes.
 
 ## Security testing
 
-Snyker has both runtime and development dependencies, and both are checked by Snyk for known security issues. Snyk is integrated via GitHub, and automatically detects any 'requirements' files. Chalice also uses `requirementz.txt` for managing dependencies. However, Snyker uses Poetry to manage it dependencies. To bridge this gap we have a GitHub Action which will generate the `requirements` files whenever the Poetry dependencies are changed. You can also do this manually
+Snyker has both runtime and development dependencies, and both are checked by Snyk for known security issues. Snyk is integrated via GitHub, and automatically detects any `requirements` files. Chalice also uses `requirements.txt` for managing dependencies. However, Snyker uses Poetry to manage it dependencies. To bridge this gap we have a GitHub Action which will generate the `requirements` files whenever the Poetry dependencies are changed. You can also do this manually
 using the included `Makefile`.
 
 ![Requirements](https://github.com/garethr/snyker/workflows/Requirements/badge.svg)
