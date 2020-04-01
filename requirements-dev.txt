@@ -339,7 +339,7 @@ pywin32==227; sys_platform == "win32" and python_version >= "3.6" \
     --hash=sha256:7c1ae32c489dc012930787f06244426f8356e129184a02c25aef163917ce158e \
     --hash=sha256:c054c52ba46e7eb6b7d7dfae4dbd987a1bb48ee86debe3f245a2884ece46e295 \
     --hash=sha256:f27cec5e7f588c3d1051651830ecc00294f90728d19c3bf6916e6dba93ea357c
-pyyaml==5.2 \
+pyyaml==5.3.1 \
     --hash=sha256:35ace9b4147848cafac3db142795ee42deebe9d0dad885ce643928e88daebdcc \
     --hash=sha256:ebc4ed52dcc93eeebeae5cf5deb2ae4347b3a81c3fa12b0b8c976544829396a4 \
     --hash=sha256:38a4f0d114101c58c0f3a88aeaa44d63efd588845c5a2df5290b73db8f246d15 \
