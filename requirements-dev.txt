@@ -286,7 +286,7 @@ pyasn1==0.4.8 \
     --hash=sha256:aef77c9fb94a3ac588e87841208bdec464471d9871bd5050a287cc9a475cd0ba
 pycparser==2.19 \
     --hash=sha256:a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3
-pylint==2.4.4 \
+pylint==2.5.0 \
     --hash=sha256:886e6afc935ea2590b462664b161ca9a5e40168ea99e5300935f6591ad467df4 \
     --hash=sha256:3db5468ad013380e987410a8d6956226963aed94ecb5f9d3a28acca6d9ac36cd
 pyparsing==2.4.6 \
