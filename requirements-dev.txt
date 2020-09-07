@@ -424,3 +424,5 @@ xmltodict==0.12.0 \
 zipp==0.6.0; python_version >= "3.5" and python_version < "3.8" or python_version < "3.8" \
     --hash=sha256:f06903e9f1f43b12d371004b4ac7b06ab39a44adc747266928ae6debfa7b3335 \
     --hash=sha256:3718b1cbcd963c7d4c5511a8240812904164b7f381b647143a89d3b98f9bcd8e
+
+pip>=19.2 # not directly required, pinned by Snyk to avoid a vulnerability
