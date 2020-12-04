@@ -260,6 +260,22 @@ test = ["pytest (>=3.6.0,<3.9.0 || >3.9.0,<3.9.1 || >3.9.1,<3.9.2 || >3.9.2)", "
 
 [[package]]
 category = "dev"
+description = "CycloneDX software bill-of-material (SBOM) generation utility"
+name = "cyclonedx-bom"
+optional = false
+python-versions = "*"
+version = "0.4.2"
+
+[package.dependencies]
+jsonschema = "3.2.0"
+packageurl-python = "0.9.3"
+packaging = "20.4"
+requests = "2.24.0"
+requirements-parser = "0.2.0"
+xmlschema = "1.2.5"
+
+[[package]]
+category = "dev"
 description = "A Python library for the Docker Engine API."
 name = "docker"
 optional = false
@@ -297,6 +313,14 @@ version = "0.14.1"
 
 [package.dependencies]
 six = "*"
+
+[[package]]
+category = "dev"
+description = "XPath 1.0/2.0 parsers and selectors for ElementTree and lxml"
+name = "elementpath"
+optional = false
+python-versions = ">=3.6"
+version = "2.0.5"
 
 [[package]]
 category = "dev"
@@ -541,11 +565,19 @@ version = "0.4.3"
 
 [[package]]
 category = "dev"
+description = "A \"purl\" aka. Package URL parser and builder"
+name = "packageurl-python"
+optional = false
+python-versions = "*"
+version = "0.9.3"
+
+[[package]]
+category = "dev"
 description = "Core utilities for Python packages"
 name = "packaging"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "19.2"
+version = "20.4"
 
 [package.dependencies]
 pyparsing = ">=2.0.2"
@@ -811,17 +843,25 @@ description = "Python HTTP for Humans."
 name = "requests"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "2.22.0"
+version = "2.24.0"
 
 [package.dependencies]
 certifi = ">=2017.4.17"
-chardet = ">=3.0.2,<3.1.0"
-idna = ">=2.5,<2.9"
+chardet = ">=3.0.2,<4"
+idna = ">=2.5,<3"
 urllib3 = ">=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26"
 
 [package.extras]
-security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)"]
+security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)"]
 socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
+
+[[package]]
+category = "dev"
+description = "Parses Pip requirement files"
+name = "requirements-parser"
+optional = false
+python-versions = "*"
+version = "0.2.0"
 
 [[package]]
 category = "dev"
@@ -992,6 +1032,17 @@ version = "1.11.2"
 
 [[package]]
 category = "dev"
+description = "An XML Schema validator and decoder"
+name = "xmlschema"
+optional = false
+python-versions = ">=3.5"
+version = "1.2.5"
+
+[package.dependencies]
+elementpath = ">=2.0.2,<3.0.0"
+
+[[package]]
+category = "dev"
 description = "Makes working with XML feel like you are working with JSON"
 name = "xmltodict"
 optional = false
@@ -1015,7 +1066,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pathlib2", "contextlib2", "unittest2"]
 
 [metadata]
-content-hash = "a92585cfb9231a446ee5e761e6ba3e40c52fa99da7e1eacdc0b7254d4617051f"
+content-hash = "247c98a3d12dd42dd848543f17ec4bde86b1495b14dbd4bfdd2dfe888dc2d74c"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -1177,6 +1228,10 @@ cryptography = [
     {file = "cryptography-2.8-cp38-cp38-win_amd64.whl", hash = "sha256:971221ed40f058f5662a604bd1ae6e4521d84e6cad0b7b170564cc34169c8f13"},
     {file = "cryptography-2.8.tar.gz", hash = "sha256:3cda1f0ed8747339bbdf71b9f38ca74c7b592f24f65cdb3ab3765e4b02871651"},
 ]
+cyclonedx-bom = [
+    {file = "cyclonedx-bom-0.4.2.tar.gz", hash = "sha256:5ea3c716ba19793c2ace35ccd343a668a92b1b9f242bcbdf9b311b211e1ee048"},
+    {file = "cyclonedx_bom-0.4.2-py2.py3-none-any.whl", hash = "sha256:f9b6e36d61455197e3c369fd613c4b76eb94da0f139e86a3dc517fc47e1cbb42"},
+]
 docker = [
     {file = "docker-4.1.0-py2.py3-none-any.whl", hash = "sha256:8f93775b8bdae3a2df6bc9a5312cce564cade58d6555f2c2570165a1270cd8a7"},
     {file = "docker-4.1.0.tar.gz", hash = "sha256:6e06c5e70ba4fad73e35f00c55a895a448398f3ada7faae072e2bb01348bafc1"},
@@ -1189,6 +1244,10 @@ docutils = [
 ecdsa = [
     {file = "ecdsa-0.14.1-py2.py3-none-any.whl", hash = "sha256:e108a5fe92c67639abae3260e43561af914e7fd0d27bae6d2ec1312ae7934dfe"},
     {file = "ecdsa-0.14.1.tar.gz", hash = "sha256:64c613005f13efec6541bb0a33290d0d03c27abab5f15fbab20fb0ee162bdd8e"},
+]
+elementpath = [
+    {file = "elementpath-2.0.5-py3-none-any.whl", hash = "sha256:1dd545ed17692f903cc2d90ce721f924a5e8d657ad8b9ff639cd4512c633010b"},
+    {file = "elementpath-2.0.5.tar.gz", hash = "sha256:d9612efed8ec2a5611f8fac90111e4c49464084eae9087028e63ac4b0b99cd90"},
 ]
 enum-compat = [
     {file = "enum-compat-0.0.3.tar.gz", hash = "sha256:3677daabed56a6f724451d585662253d8fb4e5569845aafa8bb0da36b1a8751e"},
@@ -1325,9 +1384,13 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
+packageurl-python = [
+    {file = "packageurl-python-0.9.3.tar.gz", hash = "sha256:c54add03a464d4779ee50350231aabb971751bbf52389acbcd0149e2ea7122aa"},
+    {file = "packageurl_python-0.9.3-py2.py3-none-any.whl", hash = "sha256:0682b2eddab16151da5bd4ef38081e9b27f8eb33cd29baf41f4996d4e88e6e70"},
+]
 packaging = [
-    {file = "packaging-19.2-py2.py3-none-any.whl", hash = "sha256:d9551545c6d761f3def1677baf08ab2a3ca17c56879e70fecba2fc4dde4ed108"},
-    {file = "packaging-19.2.tar.gz", hash = "sha256:28b924174df7a2fa32c1953825ff29c61e2f5e082343165438812f00d3a7fc47"},
+    {file = "packaging-20.4-py2.py3-none-any.whl", hash = "sha256:998416ba6962ae7fbd6596850b80e17859a5753ba17c32284f67bfff33784181"},
+    {file = "packaging-20.4.tar.gz", hash = "sha256:4357f74f47b9c12db93624a82154e9b120fa8293699949152b22065d556079f8"},
 ]
 pluggy = [
     {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
@@ -1437,8 +1500,12 @@ pyyaml = [
     {file = "PyYAML-5.2.tar.gz", hash = "sha256:c0ee8eca2c582d29c3c2ec6e2c4f703d1b7f1fb10bc72317355a746057e7346c"},
 ]
 requests = [
-    {file = "requests-2.22.0-py2.py3-none-any.whl", hash = "sha256:9cf5292fcd0f598c671cfc1e0d7d1a7f13bb8085e9a590f48c010551dc6c4b31"},
-    {file = "requests-2.22.0.tar.gz", hash = "sha256:11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4"},
+    {file = "requests-2.24.0-py2.py3-none-any.whl", hash = "sha256:fe75cc94a9443b9246fc7049224f75604b113c36acb93f87b80ed42c44cbb898"},
+    {file = "requests-2.24.0.tar.gz", hash = "sha256:b3559a131db72c33ee969480840fff4bb6dd111de7dd27c8ee1f820f4f00231b"},
+]
+requirements-parser = [
+    {file = "requirements-parser-0.2.0.tar.gz", hash = "sha256:5963ee895c2d05ae9f58d3fc641082fb38021618979d6a152b6b1398bd7d4ed4"},
+    {file = "requirements_parser-0.2.0-py2-none-any.whl", hash = "sha256:76650b4a9d98fc65edf008a7920c076bb2a76c08eaae230ce4cfc6f51ea6a773"},
 ]
 responses = [
     {file = "responses-0.10.9-py2.py3-none-any.whl", hash = "sha256:515fd7c024097e5da76e9c4cf719083d181f1c3ddc09c2e0e49284ce863dd263"},
@@ -1518,6 +1585,10 @@ wheel = [
 ]
 wrapt = [
     {file = "wrapt-1.11.2.tar.gz", hash = "sha256:565a021fd19419476b9362b05eeaa094178de64f8361e44468f9e9d7843901e1"},
+]
+xmlschema = [
+    {file = "xmlschema-1.2.5-py3-none-any.whl", hash = "sha256:7c528e0ec3eac97276491e7657d843f6090cbc2ea9216eb4398553623859a23f"},
+    {file = "xmlschema-1.2.5.tar.gz", hash = "sha256:1c4515dd16b5b556dac27cae70bdb3c863e1448e9d58896326ff468ff55e4246"},
 ]
 xmltodict = [
     {file = "xmltodict-0.12.0-py2.py3-none-any.whl", hash = "sha256:8bbcb45cc982f48b2ca8fe7e7827c5d792f217ecf1792626f808bf41c3b86051"},

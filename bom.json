@@ -1,0 +1,79 @@
+{
+    "bomFormat": "CycloneDX",
+    "components": [
+        {
+            "description": "AWS Lambda Context class for type checking and testing",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "1876882e134cb2f95e45948994248b17"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "d03b16aaf8abac30b71bc5d66ed8edadd8805e0d581f73f1e9b4b171635c817d"
+                }
+            ],
+            "licenses": [],
+            "modified": false,
+            "name": "aws-lambda-context",
+            "publisher": "New10 B.V.",
+            "purl": "pkg:pypi/aws-lambda-context@1.1.0",
+            "type": "library",
+            "version": "1.1.0"
+        },
+        {
+            "description": "Python 2 and 3 compatibility utilities",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "b642ef493974a23bb77f5c7e0e08b204"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "1f1b7d42e254082a9db6279deae68afb421ceba6158efa6131de7b3003ee93fd"
+                }
+            ],
+            "licenses": [
+                {
+                    "license": {
+                        "name": "MIT"
+                    }
+                }
+            ],
+            "modified": false,
+            "name": "six",
+            "publisher": "Benjamin Peterson",
+            "purl": "pkg:pypi/six@1.13.0",
+            "type": "library",
+            "version": "1.13.0"
+        },
+        {
+            "description": "Structured Logging for Python",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "bb813bfd0e09cd445c2ac45f1695f401"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "6640e6690fc31d5949bc614c1a630464d3aaa625284aeb7c6e486c3010d73e12"
+                }
+            ],
+            "licenses": [
+                {
+                    "license": {
+                        "name": "MIT or Apache License, Version 2.0"
+                    }
+                }
+            ],
+            "modified": false,
+            "name": "structlog",
+            "publisher": "Hynek Schlawack",
+            "purl": "pkg:pypi/structlog@19.2.0",
+            "type": "library",
+            "version": "19.2.0"
+        }
+    ],
+    "specVersion": "1.2",
+    "version": 1
+}
