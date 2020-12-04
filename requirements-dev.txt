@@ -64,7 +64,7 @@ python-dateutil==2.8.1; python_version >= "2.7" and python_full_version < "3.0.0
 python-jose==3.1.0
 pytz==2019.3
 pywin32==227; sys_platform == "win32" and python_version >= "3.6" and (python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6")
-pyyaml==5.2; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
+pyyaml==5.3.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
 requests==2.24.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 requirements-parser==0.2.0
 responses==0.10.9; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
@@ -76,7 +76,7 @@ structlog==19.2.0
 toml==0.10.0; python_version >= "3.6"
 typed-ast==1.4.0; python_version >= "3.5" and python_version < "3.8" and (python_version >= "3.5" and python_version < "3.8" or python_version >= "3.8") or python_version >= "3.5" and python_version < "3.8" and (python_version >= "3.5" and python_version < "3.8" or python_version >= "3.8") and implementation_name == "cpython"
 typing-extensions==3.7.4.1; python_version >= "3.5" and python_version < "3.8" and (python_version >= "3.5" and python_version < "3.8" or python_version >= "3.8")
-urllib3==1.25.7; python_version >= "3.4" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4" and python_version >= "3.4"
+urllib3==1.25.9; python_version >= "3.4" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4" and python_version >= "3.4"
 wcwidth==0.1.7; python_version >= "3.5"
 websocket-client==0.57.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 werkzeug==0.16.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
