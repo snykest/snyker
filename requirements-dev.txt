@@ -17,7 +17,7 @@ chardet==3.0.4; python_version >= "2.7" and python_full_version < "3.0.0" or pyt
 click==7.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
 colorama==0.4.3; python_version >= "3.5" and sys_platform == "win32" and python_full_version < "3.0.0" or python_version >= "3.5" and sys_platform == "win32" and python_full_version >= "3.5.0"
 coverage==5.0.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4"
-cryptography==2.8; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
+cryptography==3.3.2; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
 cyclonedx-bom==0.4.2
 docker==4.1.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 docutils==0.15.2; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
