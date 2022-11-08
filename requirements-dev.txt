@@ -46,7 +46,7 @@ mypy==0.761
 packageurl-python==0.9.3
 packaging==20.4; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.5"
 pluggy==0.13.1; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.5"
-py==1.8.1; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.5"
+py==1.10.0; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.5"
 pyasn1==0.4.8
 pycparser==2.19; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
 pylint==2.4.4; python_version >= "3.5"
@@ -76,11 +76,11 @@ structlog==19.2.0
 toml==0.10.0; python_version >= "3.6"
 typed-ast==1.4.0; python_version >= "3.5" and python_version < "3.8" and (python_version >= "3.5" and python_version < "3.8" or python_version >= "3.8") or python_version >= "3.5" and python_version < "3.8" and (python_version >= "3.5" and python_version < "3.8" or python_version >= "3.8") and implementation_name == "cpython"
 typing-extensions==3.7.4.1; python_version >= "3.5" and python_version < "3.8" and (python_version >= "3.5" and python_version < "3.8" or python_version >= "3.8")
-urllib3==1.25.7; python_version >= "3.4" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4" and python_version >= "3.4"
+urllib3==1.26.5; python_version >= "3.4" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4" and python_version >= "3.4"
 wcwidth==0.1.7; python_version >= "3.5"
 websocket-client==0.57.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 werkzeug==0.16.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
-wheel==0.33.6; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
+wheel==0.38.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
 wrapt==1.11.2; python_version >= "3.5"
 xmlschema==1.2.5; python_version >= "3.5"
 xmltodict==0.12.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.4.0"
